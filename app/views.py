@@ -4,7 +4,12 @@ from django.contrib.auth.models import User
 from django.core import serializers
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
+from rest_framework.decorators import api_view
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework import generics
 from app import models
+from app import serializers as sz
 
 # Create your views here.
 class Login(View):
@@ -23,5 +28,8 @@ class Login(View):
             else:
                 return HttpResponse('{"messages":"Wrong password"}')
         except User.DoesNotExist:
-            return HttpResponse('{"message":
-                                "username and password incorrect"}')
+            return HttpResponse('{"message":"username and password incorrect"}')
+
+class RegisterCitizen(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = sz.UserSerializer
