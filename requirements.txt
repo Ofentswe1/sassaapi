@@ -1,0 +1,11 @@
+Django
+SQLAlchemy
+dj-database-url
+dj-static
+django-postgrespool
+gunicorn
+newrelic
+psycopg2
+static3
+whitenoise
+wsgiref
