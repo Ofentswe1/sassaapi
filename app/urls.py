@@ -5,5 +5,6 @@ urlpatterns = [
     path('app/api/<str:username>/<str:password>/', views.Login.as_view(),
     name='login'),
     path('api/citizen/', views.RegisterCitizen.as_view(), name='citizen'),
-    path('api/address/', views.CitizenAddress.as_view(), name='citizen'),
+    path('api/address/', views.CitizenAddress.as_view(), name='address'),
+    path('api/payments/', views.CitizenAddress.as_view(), name='payments'),
 ]

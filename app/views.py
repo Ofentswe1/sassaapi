@@ -35,5 +35,9 @@ class RegisterCitizen(generics.ListCreateAPIView):
     serializer_class = sz.UserSerializer
 
 class CitizenAddress(generics.ListCreateAPIView):
-    queryset = User.objects.all()
+    queryset = models.CitizenAddress.objects.all()
+    serializer_class = sz.CitizenAddressSerializer
+
+class Payments(generics.ListAPIView):
+    queryset = models.Payments.objects.all()
     serializer_class = sz.CitizenAddressSerializer

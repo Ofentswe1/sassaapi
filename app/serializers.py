@@ -37,3 +37,9 @@ class CitizenAddressSerializer(serializers.ModelSerializer):
                                    latitude=latitude,
                                    password=longitude)
         return address_
+
+
+class PaymentsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Payments
+        fields = ['username', 'balance', 'pay_date', 'collected', 'collected_date']

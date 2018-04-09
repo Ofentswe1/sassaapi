@@ -15,7 +15,7 @@ class CitizenAddress(models.Model):
 
 class Payments(models.Model):
     username = models.CharField(max_length=13)
-    balance = models.FloatField()
+    balance = models.FloatField(decimals=2)
     pay_date = models.DateField()
     collected = models.CharField(max_length=3)
     collected_date = models.DateTimeField()
