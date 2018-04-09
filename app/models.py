@@ -8,7 +8,7 @@ class OfficeAddress(models.Model):
     longitude = models.FloatField()
 
 class CitizenAddress(models.Model):
-    id_number = models.OneToOneField(User, on_delete=models.CASCADE)
+    username = models.CharField(max_length=13)
     address = models.CharField(max_length=100)
     latitude = models.FloatField()
     longitude = models.FloatField()

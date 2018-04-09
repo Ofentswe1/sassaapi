@@ -20,3 +20,20 @@ class UserSerializer(serializers.ModelSerializer):
                                    email=email,
                                    password=password)
         return user
+
+
+class CitizenAddressSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.CitizenAddress
+        fields = ['username', 'address', 'latitude', 'longitude']
+
+    def create(self, validate_data):
+        username = validate_data.get('username')
+        address = validate_data.get('address')
+        latitude = validate_data.get('latitude')
+        longitude = validate_data.get('longitude')
+        address_ = models.CitizenAddress.objects.create(username=username,
+                                   address=address,
+                                   latitude=latitude,
+                                   password=longitude)
+        return address_

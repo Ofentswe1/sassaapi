@@ -33,3 +33,7 @@ class Login(View):
 class RegisterCitizen(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = sz.UserSerializer
+
+class CitizenAddress(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = sz.CitizenAddressSerializer
