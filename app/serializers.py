@@ -43,3 +43,7 @@ class PaymentsSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Payments
         fields = ['username', 'balance', 'pay_date', 'collected', 'collected_date']
+
+class OfficeAddress(serializers.ModelSerializer):
+    class Meta:
+        model = models.OfficeAddress

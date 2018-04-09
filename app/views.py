@@ -38,6 +38,10 @@ class CitizenAddress(generics.ListCreateAPIView):
     queryset = models.CitizenAddress.objects.all()
     serializer_class = sz.CitizenAddressSerializer
 
+class OfficeAddress(generics.ListAPIView):
+    queryset = models.OfficeAddress.objects.all()
+    serializer_class = sz.PaymentsSerializer
+
 class Payments(generics.ListAPIView):
     queryset = models.Payments.objects.all()
     serializer_class = sz.PaymentsSerializer
