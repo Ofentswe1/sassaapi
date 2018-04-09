@@ -40,4 +40,4 @@ class CitizenAddress(generics.ListCreateAPIView):
 
 class Payments(generics.ListAPIView):
     queryset = models.Payments.objects.all()
-    serializer_class = sz.CitizenAddressSerializer
+    serializer_class = sz.PaymentsSerializer
