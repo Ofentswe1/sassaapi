@@ -35,7 +35,7 @@ class CitizenAddressSerializer(serializers.ModelSerializer):
         address_ = models.CitizenAddress.objects.create(username=username,
                                    address=address,
                                    latitude=latitude,
-                                   password=longitude)
+                                   longitude=longitude)
         return address_
 
 

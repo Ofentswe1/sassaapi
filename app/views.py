@@ -43,5 +43,6 @@ class OfficeAddress(generics.ListAPIView):
     serializer_class = sz.PaymentsSerializer
 
 class Payments(generics.ListAPIView):
-    queryset = models.Payments.objects.all()
-    serializer_class = sz.PaymentsSerializer
+    def get(self, request, *args, **kwargs):
+        queryset = models.Payments.objects.all(username = kwargs['username'])
+        serializer_class = sz.PaymentsSerializer
