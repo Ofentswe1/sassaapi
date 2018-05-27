@@ -12,6 +12,12 @@ from app import models
 from app import serializers as sz
 
 # Create your views here.
+class HomePage(View):
+    template_name = 'index.html'
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+
 class Login(View):
     def get(self, request, *args, **kwargs):
         username = kwargs['username']
