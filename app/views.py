@@ -72,7 +72,7 @@ class OfficeAddress(generics.ListAPIView):
 class Payments(generics.ListAPIView):
     def get(self, request, *args, **kwargs):
         '''
-        This is the home page (Landing Page)
+        This lists all the 
 
         Args:
             *args:

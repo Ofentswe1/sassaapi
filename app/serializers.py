@@ -37,7 +37,8 @@ class CitizenAddressSerializer(serializers.ModelSerializer):
 
     def create(self, validate_data):
         '''
-
+        This modules allows us to create and serialize address of users
+        
         Args: 
           validate_data: (form) with username(str), address(str),
           latitude(float), longitude(float)
