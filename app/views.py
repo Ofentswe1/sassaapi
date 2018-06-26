@@ -12,8 +12,35 @@ from app import models
 from app import serializers as sz
 
 # Create your views here.
+class HomePage(View):
+
+    template_name = 'index.html'
+    def get(self, request, *args, **kwargs):
+        '''
+        This is the home page (Landing Page)
+
+        Args:
+            *args:
+            **kwargs:
+        
+        Returns: 
+
+        '''
+        return render(request, self.template_name)
+
+
 class Login(View):
     def get(self, request, *args, **kwargs):
+        '''
+        
+        Args:
+            *args: 
+            **kwargs: (str) username, (str) password
+
+        Returns:
+            (Json) objects with user information/message responce 
+
+        '''
         username = kwargs['username']
         password = kwargs['password']
         try:
@@ -44,6 +71,16 @@ class OfficeAddress(generics.ListAPIView):
 
 class Payments(generics.ListAPIView):
     def get(self, request, *args, **kwargs):
+        '''
+        This lists all the 
+
+        Args:
+            *args:
+            **kwargs:
+        
+        Returns:
+
+        '''
         queryset = models.Payments.objects.all()
         serializer_class = sz.PaymentsSerializer
 

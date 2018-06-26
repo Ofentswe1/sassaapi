@@ -10,6 +10,13 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['first_name', 'last_name', 'username', 'email', 'password']
 
     def create(self, validate_data):
+        '''
+        This modules allows us to create user and serialize on api call
+
+        Args: 
+          validate_data: (str) username, (str) first_name, (str) last_name,  (str) email, (str) password
+
+        '''
         username = validate_data.get('username')
         first_name = validate_data.get('first_name')
         last_name = validate_data.get('last_name')
@@ -29,6 +36,16 @@ class CitizenAddressSerializer(serializers.ModelSerializer):
         fields = ['username', 'address', 'latitude', 'longitude']
 
     def create(self, validate_data):
+        '''
+        This modules allows us to create and serialize address of users
+        
+        Args: 
+          validate_data: (form) with username(str), address(str),
+          latitude(float), longitude(float)
+        
+        Returns: 
+                address(str) after its created successfully
+        '''
         username = validate_data.get('username')
         address = validate_data.get('address')
         latitude = validate_data.get('latitude')
