@@ -38,7 +38,7 @@ class Login(View):
             **kwargs: (str) username, (str) password
 
         Returns:
-            (Json) objects with user information/message responce 
+            (Json) objects with user information/message response 
 
         '''
         username = kwargs['username']
